@@ -77,7 +77,7 @@ There are a few reasons that come to mind.
 - Need to recharge
 - Possible radiation
 - Not clean (used during a workout)
-- Not comfortable to sleep with
+- Not comfortable to sleep with  
 We would have to figure out what the reason is and then we would be able to conclude a lot more  
 about sleep and various activities.  
 
