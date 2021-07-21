@@ -5,12 +5,12 @@ By answering these questions:
 2. How could these trends apply to Bellabeat customers?
 3. How could these trends help influence Bellabeat marketing strategy?
 ## Data Preparation
-The data was collected from [Kaggle](https://www.kaggle.com/arashnic/fitbit) From the user [Möbius](https://www.kaggle.com/arashnic)  
+The data was collected from [Kaggle](https://www.kaggle.com/arashnic/fitbit) From the user [Möbius](https://www.kaggle.com/arashnic).  
 The data consists of personal fitness data taken from 30 *Fitbit* devices.  
-Heart rate, sleep time, steps counter.  
+It consists of Heart rate, sleep time, steps counter metrics.  
 
 I first reviewed the .csv files that I wanted to analyze and checked for any missing values,  
-any inconsistencies and corrected the formating of the dates.  
+and inconsistencies and corrected the formating of the dates.  
 ```  daily_activity <- read.csv("C:.../Fitabase Data 4.12.16-5.12.16/dailyActivity_merged.csv") ```
 ```daily_calories <- read.csv("C:.../Fitabase Data 4.12.16-5.12.16/dailyCalories_merged.csv") ```
     
@@ -21,13 +21,13 @@ I set the step minimum to 100 and the calorie minimum to 700 in order to use the
 ```daily_activity <- filter(daily_activity, TotalSteps > 100)```  
 ```daily_calories <-  filter(daily_calories, Calories > 700)```  
 ### Remove Outliers
-There were some outliers in each dataframe and I used the following code to filter them out.  
+There were some outliers in each dataset and I used the following code to filter them out.  
 ```calorie_outliers <- boxplot(daily_calories$Calories,plot=FALSE)$out```  
 ```daily_calories <- daily_calories[-which(daily_calories$Calories %in% calorie_outliers),]```  
 ```activity_outliers <- boxplot(daily_activity$TotalSteps, plot=FALSE)$out```  
 ```daily_activity<- daily_activity[-which(daily_activity$TotalSteps %in% activity_outliers),]```  
 ### Align Column Names
-In order to merge the two dataframes together smoothly, I changed the column name for the dates to be identical.   
+In order to merge the two datasets together smoothly, I changed the column name for the dates so they will be identical.   
 ```daily_calories <- rename(daily_calories,ActivityDate=ActivityDay)```  
 ### Merge Files
 I then combined the two dataframes.  
@@ -45,7 +45,7 @@ The following is a scatterplot overlaying a regression line to portray that the 
   ```labs(title = " Calories Burnt vs Total Daily Steps")```    
 ![plot of calories vs daily steps](img/calories_burnt_vs_daily_step.jpg)  
 
-What this graph shows is intuitive the more a person walks the more calories they burn.  
+What this graph shows is intuitive, the more a person walks the more calories they burn.  
 The graph seems like it has a relatively low correlation, considering the fact that the two variables are highly associated.   
 ## Does being active help you sleep faster?
 ### Import new .csv
@@ -68,7 +68,7 @@ The second variable I created by dividing the time a person slept by the amount 
 ![](img/High_daily_intesity.jpg.jpg)  
 As you can see there is no specific pattern with activity and percent of time slept.  
 It looks as if there is not enough data on sleep that overlaps with high activity.  
-There is only 31 datapoints which isn't enough to make any conclusions.  
+There is only 31 datapoints, which isn't enough to make any conclusions.  
 ![](img/num_observations_sleep.JPG)
 ## How to get more observations
 We would have to figure out the reason people aren't using their device while asleep.  
