@@ -101,7 +101,8 @@ There are a few reasons that come to mind.
 - Not clean (used during a workout)
 - Not comfortable to sleep with  
 We would have to figure out what the reason is and then we would be able to conclude a lot more  
-about sleep and various activities.  
+about sleep and various activities once a conclusion is established these findings can be used for advertising purposes.  
+For example if we see that more daily activity highly correlates with faster sleep times the bellabeat can use this data to incentivize using their device for exercise and track daily activities. 
 
 
 
