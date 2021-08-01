@@ -1,10 +1,10 @@
 # Wellness Analysis
-## How to improve Bellabeat?
+## How to improve Bellabeat? (Ask)
 By answering these questions:
 1. What are some trends in smart device usage?
 2. How could these trends apply to Bellabeat customers?
 3. How could these trends help influence Bellabeat marketing strategy?
-## Data Preparation
+## Data Preparation (Prepare)
 The data was collected from [Kaggle](https://www.kaggle.com/arashnic/fitbit) From the user [Möbius](https://www.kaggle.com/arashnic).  
 The data consists of personal fitness data taken from 30 *Fitbit* devices.  
 It consists of Heart rate, sleep time, steps counter metrics.  
@@ -16,7 +16,7 @@ daily_activity <- read.csv("C:.../Fitabase Data 4.12.16-5.12.16/dailyActivity_me
 daily_calories <- read.csv("C:.../Fitabase Data 4.12.16-5.12.16/dailyCalories_merged.csv") 
 ```
     
-### Filter inaccurate data
+### Filter inaccurate data (Process)
 I realized that there where many observations that were inaccurate due to a lack of device usage.  
 As it is possible that people take less than 100 steps it is more likely that they haven't been using their device.  
 I set the step minimum to 100 and the calorie minimum to 700 in order to use the most accurate data.  
@@ -42,7 +42,7 @@ I then combined the two dataframes.
 ```{r}
 daily_activity_calories <- merge(daily_activity, daily_calories)
 ```  
-### Summary of Data Used
+### Summary of Data Used (Analyze)
 This is some statistics of the combined dataframe:  
 ```{r}
 daily_activity_calories %>%   
@@ -50,7 +50,7 @@ daily_activity_calories %>%
   summary()
 ```  
 ![summary](img/Some_data.JPG)
-## Plot Graph
+## Plot Graph (Share)
 The following is a scatterplot overlaying a regression line to portray that the more steps taken the more calories you burn.  
 ```{r}
 ggplot(data=daily_activity_calories, aes(x=TotalSteps, y= Calories, color = "red")) +   
@@ -92,7 +92,7 @@ As you can see there is no specific pattern with activity and percent of time sl
 It looks as if there is not enough data on sleep that overlaps with high activity.  
 There is only 31 datapoints, which isn't enough to make any conclusions.  
 ![](img/num_observations_sleep.JPG)
-## How to get more observations
+## How to get more observations (Act)
 We would have to figure out the reason people aren't using their device while asleep.  
 There are a few reasons that come to mind.  
 - People may not realize that it's meant for sleep
