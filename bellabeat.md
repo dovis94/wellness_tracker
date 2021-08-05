@@ -91,7 +91,15 @@ ggplot(data=daily_activity_sleep, aes(x=VeryActiveMinutes, y=PctTimeInBed_Sleepi
 As you can see there is no specific pattern with activity and percent of time slept.  
 It looks as if there is not enough data on sleep that overlaps with high activity.  
 There is only 31 datapoints, which isn't enough to make any conclusions.  
-![](img/num_observations_sleep.JPG)
+![](img/num_observations_sleep.JPG)  
+I created an analysis that take a look at how much sleep (in minutes instead of percent like before).  
+I created clusters based on activity, distance and sleep.  
+We can see that in the *Very active* group the more active and further a person went the more sleep they got.  
+While the *Light active* group only had a slight advantage in sleep time. 
+![](img/light_very_distance.JPG)  
+I also wanted to show that contrary to what we may have thought, people that are more sedentary are not significantly less mobile.  
+As we see there is only a slight slope and low correlation.  
+![](img/dist_sedentary.JPG)
 ## How to get more observations (Act)
 We would have to figure out the reason people aren't using their device while asleep.  
 There are a few reasons that come to mind.  
